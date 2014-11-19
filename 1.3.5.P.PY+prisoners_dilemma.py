@@ -120,7 +120,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
             elif opponent_score > 0:
                 return 'b'
             else:
-                return 'c'
+                return 'b'
                           
     ######
     ######
