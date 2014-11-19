@@ -185,6 +185,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                 return 'b' # betray is they were severely punished last time
             else:
                 return 'b' #otherwise betray because it works!
+#This is Olivia and Manuel
 
 
 
