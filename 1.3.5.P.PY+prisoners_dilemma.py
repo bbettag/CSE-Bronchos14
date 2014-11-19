@@ -111,16 +111,15 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     # This example player always colludes
     if player == 0:
         if getting_team_name:
-            return "( ͡° ͜ʖ ͡°)"
+            return 'loyal'
         else:
-            if len(opponent_history) == 2 or len(opponent_history) == 6 or len(opponent_history) == 8:
-                return 'b' #Always betrays on 3rd, 7th, and 9th round
-            elif opponent_history[-1] == 'b' and opponent_history[-2] == 'b':
-                return 'b' #Betrays if accomplice betrays for 2 rounds in a row
-            elif opponent_score > 0:
-                return 'b'
-            else:
+    # use history, opponent_history, score, opponent_score
+            # this uses the opponents history to compute a return
+            size = len(history)
+            if(size%3==0): #the number of rounds played is a multiple of 3
                 return 'c'
+            else:
+                return 'b'
                           
     ######
     ######
@@ -128,12 +127,12 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #This example player always betrays.      
     elif player == 1:
         if getting_team_name:
-            return 'betray every 5th round'
+            return 'loyal'
         else:
-            # use history, opponent_history, score, opponent_score
-            # to compute your strategy
+    # use history, opponent_history, score, opponent_score
+            # this uses the opponents history to compute a return
             size = len(history)
-            if(size%5==0): #the number of rounds played is a multiple of 5
+            if(size%3==0): #the number of rounds played is a multiple of 3
                 return 'c'
             else:
                 return 'b'
@@ -187,7 +186,6 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
             else:
                 return 'b' #otherwise betray because it works!
 #This is Olivia and Manuel
-#this is a test
 
 
 
