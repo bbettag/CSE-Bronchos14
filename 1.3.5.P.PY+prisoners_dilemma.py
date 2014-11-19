@@ -186,6 +186,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
             else:
                 return 'b' #otherwise betray because it works!
 #This is Olivia and Manuel
+#this is a test
 
 
 
